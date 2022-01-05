@@ -1,2 +1,2 @@
-<h1> Projek sanss <h1>
-<h2> Created by Andre <h2>
+<h1> Projek sanss </h1>
+Created by Andre 
