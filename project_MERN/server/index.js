@@ -5,12 +5,12 @@ import cors from 'cors';
 import studentRoutes from './routes/student.js';
 
 const app = express();
-
-app.use('/students', studentRoutes);
-app.use(bodyParser.json({limit: "20mb", extended:true}));
-app.use(bodyParser.urlencoded({limit: "20mb", extended:true}));
-
 app.use(cors());
+
+app.use(express.json({limit: "20mb", extended: true}));//bodyParser are deprecated, so use express
+app.use(express.urlencoded({limit: "20mb", extended: true}));
+app.use('/students', studentRoutes); //The app.use(students) needs to be AFTER the express.json/urlencoded.
+
 
 const CONNECTION_URL = 'mongodb+srv://projectMERN:mErn666@projectmern.30rqz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
