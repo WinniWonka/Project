@@ -22,3 +22,14 @@ export const createStudent = async (req, res) => {
         res.status(409).json({message: error.message}); //(409) = CONFLICT 
     }
 }
+
+export const deleteStudent = async (req, res) => {
+    const id = req.params.id;
+
+    try {
+        await StudentData.findByIdAndRemove(id).exec();
+        res.send('Succesfully Deleted!')
+    } catch (error) {
+         console.log(error);
+    }
+}

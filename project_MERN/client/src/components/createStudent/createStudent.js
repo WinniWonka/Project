@@ -17,7 +17,9 @@ const [student, setStudent] = useState({
 
 //function Click Button
 const createStudent = () => {
-    axios.post('http://localhost:5000/students', student)
+    axios.post('http://localhost:5000/students', student).then( () => {
+      window.location.reload(false);
+    } )
 }
 
   return (
