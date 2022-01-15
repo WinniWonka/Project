@@ -1,2 +1,2 @@
-<h1> Projek sanss </h1>
+<h1> Projek santai </h1>
 Created by Andre 
